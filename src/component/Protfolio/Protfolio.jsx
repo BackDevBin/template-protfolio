@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import toy from '../../assets/portfolio/toy.png';
 import camp from '../../assets/portfolio/summer.png';
 import chef from '../../assets/portfolio/shef.png';
 import { FaAngleRight, FaFileCode, FaLaptopCode } from 'react-icons/fa';
+import { Link } from 'react-scroll';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Protfolio = () => {
-    return (
-        <div >
-            <h3 className='text-xl font-semibold mb-5'>Portfolio</h3>
 
+    useEffect(() => {
+        AOS.init({
+          duration: 1200, // Specify the animation duration
+        });
+      }, []);
+
+    return (
+        <div id='portfolio'>
+            <h3 className='text-xl font-semibold mb-5'>Portfolio</h3>
 
             <div className='md:grid grid-cols-2 gap-4'>
 
-                <div className='w-full flex shadow-xl bg-[#0F172A] hover:bg-[#141E36]'>
+                <div data-aos="flip-right" className='mt-5 w-full md:flex shadow-xl bg-[#0F172A] hover:bg-[#141E36]'>
                     <div className='relative'>
                         <img className='w-full h-full' src={toy} alt="" />
                         <div className='absolute inset-x-0 bottom-0 w-full bg-[#111A2E] p-2'>
@@ -27,7 +36,7 @@ const Protfolio = () => {
                         </div>
                     </div>
 
-                    <div className='w-1/2 ms-5 mt-5 me-3 mb-2 space-y-2 '>
+                    <div className='md:w-1/2 ms-5 mt-5 me-3 mb-2 space-y-2 '>
                         <h3 className='text-3xl font-semibold'>The Jangle Toy</h3>
                         <p className='text-sm'>A Full stack E-commerce website.User can manage their product: add product, update product, delete product etc. Have a searching and sorting features.</p>
                         <ul className='list-disc text-sm ms-5 mb-2'>
@@ -49,8 +58,8 @@ const Protfolio = () => {
 
 
                 </div>
-                <div className='w-full flex shadow-xl bg-[#0F172A] hover:bg-[#34334D]'>
-                <div className='relative'>
+                <div data-aos="flip-right" data-aos-delay="400" className='mt-5 w-full md:flex shadow-xl bg-[#0F172A] hover:bg-[#141E36]'>
+                    <div className='relative'>
                         <img className='w-full h-full' src={chef} alt="" />
                         <div className='absolute inset-x-0 bottom-0 w-full bg-[#111A2E] p-2'>
 
@@ -64,7 +73,7 @@ const Protfolio = () => {
                         </div>
                     </div>
 
-                    <div className='w-1/2 ms-5 mt-5 me-3 mb-2 space-y-2'>
+                    <div className='md:w-1/2 ms-5 mt-5 me-3 mb-2 space-y-2'>
                         <h3 className='text-3xl font-semibold'>American Chef</h3>
                         <p className='text-sm'>Single page application. User can learn recipe method and hiring the best chefs.</p>
                         <ul className='list-disc text-sm ms-5 mb-2'>
@@ -87,8 +96,8 @@ const Protfolio = () => {
 
 
                 </div>
-                <div className='w-full flex shadow-xl bg-[#0F172A] hover:bg-[#34334D]'>
-                <div className='relative'>
+                <div data-aos="flip-right" className='mt-5 w-full md:flex shadow-xl bg-[#0F172A] hover:bg-[#141E36]'>
+                    <div className='relative'>
                         <img className='w-full h-full' src={camp} alt="" />
                         <div className='absolute inset-x-0 bottom-0 w-full bg-[#111A2E] p-2'>
 
@@ -102,7 +111,7 @@ const Protfolio = () => {
                         </div>
                     </div>
 
-                    <div className='w-1/2 ms-5 mt-5 me-3 mb-2 space-y-2'>
+                    <div className='md:w-1/2 ms-5 mt-5 me-3 mb-2 space-y-2'>
                         <h3 className='text-3xl font-semibold'>Warriors Camp</h3>
                         <p className='text-sm'>Educational website for Summer camp school.Have admin, instructor and student dashboards page and They can manage their classes . User authentication and payment system are mentioned as special features.</p>
                         <ul className='list-disc text-sm ms-5 mb-2'>
